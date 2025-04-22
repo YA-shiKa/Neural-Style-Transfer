@@ -47,6 +47,7 @@ This project implements **Neural Style Transfer** using both **TensorFlow** and 
 
 - **YA-shiKa**  
   GitHub: [YA-shiKa](https://github.com/YA-shiKa)  
+  Role: Project Developer & Presenter
 
 
 
