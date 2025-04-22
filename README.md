@@ -42,12 +42,14 @@ This project implements **Neural Style Transfer** using both **TensorFlow** and 
 ├── README.md                              # Project README  
 ├── AIML REPORT(E23CSEU1153).docx          # Project Report  
 ├── Neural-Style-Transfer-with-TensorFlow.pptx  # Project Slides
+```
+
 
 ## 👩‍💻 Contributors
 
 - **YA-shiKa**  
   GitHub: [YA-shiKa](https://github.com/YA-shiKa)  
-  Role: Project Developer & Presenter
+
 
 
 
