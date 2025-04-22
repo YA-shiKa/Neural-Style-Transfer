@@ -1,24 +1,24 @@
-# Neural-Style-Transfer# 🎨 Neural Style Transfer (NST) Web App
+# 🎨 Neural Style Transfer (NST) Web App
 
 This project implements **Neural Style Transfer** using both **TensorFlow** and **PyTorch**, and provides a **Flask-based web application** where users can upload images to generate stylized art.
 
 ---
 
 ## 📌 Table of Contents
-- [Demo](#-demo)
-- [Technologies Used](#-technologies-used)
-- [Project Structure](#-project-structure)
-- [How to Run](#-how-to-run)
-- [Results](#-results)
-- [Contributors](#-contributors)
-- [License](#-license)
+- [🎥 Demo](#-demo)
+- [🛠 Technologies Used](#-technologies-used)
+- [📁 Project Structure](#-project-structure)
+- [🚀 How to Run](#-how-to-run)
+- [🖼 Results](#-results)
+- [👩‍💻 Contributors](#-contributors)
+- [📄 License](#-license)
 
 ---
 
 ## 🎥 Demo
 > Upload a content image and a style image, and get a new image that blends both!
 
-**[🖼 View Sample Output](#results)**
+**[🖼 View Sample Output](#-results)**
 
 ---
 
@@ -31,4 +31,20 @@ This project implements **Neural Style Transfer** using both **TensorFlow** and 
 - VGG19 Pre-trained Model
 
 ---
+
+## 📁 Project Structure
+```text
+├── app.py                                 # Flask backend  
+├── nst.py                                 # PyTorch implementation  
+├── neuralstyle.ipynb                      # TensorFlow notebook  
+├── index.html                             # Frontend HTML  
+├── content.jpg                            # Sample content image  
+├── style.jpg                              # Sample style image  
+├── output.png                             # Output image  
+├── README.md                              # Project README  
+├── AIML REPORT(E23CSEU1153).docx          # Project Report  
+├── Neural-Style-Transfer-with-TensorFlow.pptx  # Project Slides  
+
+
+
 
