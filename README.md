@@ -21,7 +21,7 @@ This project is a web-based tool that applies neural style transfer to combine t
 ---
 
 ## 🛠️ Technologies Used
-- Python, PyTorch
+- Python, PyTorch, VGG-19
 
 - Flask (Backend & Routing)
 
