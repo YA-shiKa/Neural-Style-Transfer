@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Neural Style Transfer</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+    }
+  </script>
+</head>
+<body class="bg-gray-100 dark:bg-gray-900 text-gray-800 dark:text-gray-100 min-h-screen flex flex-col">
+
+  <!-- Navbar -->
+  <nav class="bg-indigo-600 text-white px-6 py-4 flex justify-between items-center shadow-md">
+    <h1 class="text-xl font-bold">Neural Style Transfer</h1>
+    <button id="theme-toggle" class="bg-white text-indigo-600 px-3 py-1 rounded shadow-sm hover:bg-gray-100 transition">
+      Toggle Theme
+    </button>
+  </nav>
+
+  <!-- Main Section -->
+  <main class="flex-1 flex items-center justify-center px-4 py-10">
+    <div class="bg-white dark:bg-gray-800 shadow-2xl rounded-2xl p-8 w-full max-w-4xl">
+      <h2 class="text-2xl font-bold text-center mb-6">Upload Your Images</h2>
+
+      <form method="POST" enctype="multipart/form-data" class="space-y-4" onsubmit="showSpinner()">
+        <div>
+          <label class="block mb-1 font-medium">Content Image:</label>
+          <input type="file" name="content" required class="w-full border rounded px-3 py-2 bg-gray-50 dark:bg-gray-700 dark:border-gray-600">
+        </div>
+        <div>
+          <label class="block mb-1 font-medium">Style Image:</label>
+          <input type="file" name="style" required class="w-full border rounded px-3 py-2 bg-gray-50 dark:bg-gray-700 dark:border-gray-600">
+        </div>
+        <div class="text-center">
+          <input type="submit" value="Generate" class="px-6 py-2 bg-indigo-600 text-white font-semibold rounded hover:bg-indigo-700 transition">
+        </div>
+
+        <!-- Spinner -->
+        <div id="spinner" class="text-center mt-4 hidden">
+          <svg class="animate-spin h-6 w-6 mx-auto text-indigo-600" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+            <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+            <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4z"/>
+          </svg>
+          <p class="mt-2 text-sm">Processing your image...</p>
+        </div>
+      </form>
+
+      <!-- Result -->
+      {% if output_image %}
+      <div class="mt-10">
+        <h3 class="text-xl font-semibold text-center mb-6">Result Comparison</h3>
+        <div class="grid grid-cols-1 sm:grid-cols-3 gap-6 text-center">
+          <div>
+            <h4 class="font-medium mb-2">Content Image</h4>
+            <img src="{{ url_for('static', filename=content_image) }}" alt="Content Image" class="rounded shadow border mx-auto max-h-60">
+          </div>
+          <div>
+            <h4 class="font-medium mb-2">Style Image</h4>
+            <img src="{{ url_for('static', filename=style_image) }}" alt="Style Image" class="rounded shadow border mx-auto max-h-60">
+          </div>
+          <div>
+            <h4 class="font-medium mb-2">Stylized Output</h4>
+            <img src="{{ url_for('static', filename=output_image) }}" alt="Stylized Image" class="rounded shadow border mx-auto max-h-60">
+          </div>
+        </div>
+      </div>
+      {% endif %}
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-indigo-600 text-white text-center py-3">
+    &copy; 2025 Neural Style Transfer Project
+  </footer>
+
+  <!-- Scripts -->
+  <script>
+    function showSpinner() {
+      document.getElementById("spinner").classList.remove("hidden");
+    }
+
+    // Theme Toggle
+    const toggle = document.getElementById("theme-toggle");
+    toggle.addEventListener("click", () => {
+      document.documentElement.classList.toggle("dark");
+    });
+  </script>
+</body>
+</html>
+
+
