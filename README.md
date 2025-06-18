@@ -1,87 +1,48 @@
 # 🎨 Neural Style Transfer (NST) Web App
 
-This project implements **Neural Style Transfer** using both **TensorFlow** and **PyTorch**, and provides a **Flask-based web application** where users can upload images to generate stylized art.
+This project is a web-based tool that applies neural style transfer to combine the content of one image with the artistic style of another. Built using Flask, PyTorch, and Tailwind CSS, it provides a clean and responsive interface for uploading images and viewing stylized results.
 
 ---
 
-## 📌 Table of Contents
-- [🎥 Demo](#-demo)
-- [🛠 Technologies Used](#-technologies-used)
-- [📁 Project Structure](#-project-structure)
-- [👩‍💻 Contributors](#-contributors)
+## 🖼️ Features
 
+- Upload your own **content** and **style** images
+- View real-time result comparisons (Content | Style | Stylized Output)
+- Responsive layout with **Dark Mode toggle**
+- Image processing using PyTorch-based **Neural Style Transfer**
 
 ---
 
-## 🎥 Demo
+## 🎥 Preview
 > Upload a content image and a style image, and get a new image that blends both!
-
-**[🖼 View Sample Output](#-results)**
-
----
-
-## 🛠 Technologies Used
-- Python
-- TensorFlow & Keras
-- PyTorch
-- Flask
-- HTML / CSS (Frontend)
-- VGG19 Pre-trained Model
+![image](https://github.com/user-attachments/assets/5594b671-95da-4e31-915a-945361dfa2af)
+![image](https://github.com/user-attachments/assets/cdf37a09-7e30-4df9-a907-e0a31be310b7)
 
 ---
 
-## 📁 Project Structure
-```text
-├── app.py                                 # Flask backend  
-├── nst.py                                 # PyTorch implementation  
-├── neuralstyle.ipynb                      # TensorFlow notebook  
-├── index.html                             # Frontend HTML  
-├── content.jpg                            # Sample content image  
-├── style.jpg                              # Sample style image  
-├── output.png                             # Output image  
-├── README.md                              # Project README  
-├── AIML REPORT(E23CSEU1153).docx          # Project Report  
-├── Neural-Style-Transfer-with-TensorFlow.pptx  # Project Slides
-```
+## 🛠️ Technologies Used
+- Python, PyTorch
+
+- Flask (Backend & Routing)
+
+- Tailwind CSS, HTML, Jinja2 (Frontend)
+
 ---
 
-## 🚀 How to Run
+## 💡 How It Works
+- User uploads a content image and a style image.
 
-### 1. Clone the Repository
-```bash
-git clone https://github.com/YA-shiKa/Neural-Style-Transfer.git
-cd Neural-Style-Transfer
-```
+- Backend loads both images, extracts features via VGG-19, and computes losses.
 
-### 2. Create a Virtual Environment (Optional but Recommended)
-```bash
-python -m venv venv
-source venv/bin/activate  # On Windows: venv\Scripts\activate
-```
+- The output is optimized via gradient descent to generate a stylized version.
 
-### 3. Install Dependencies
-```bash
-pip install -r requirements.txt
-```
-
-If `requirements.txt` is not available, manually install the key packages:
-```bash
-pip install torch torchvision flask tensorflow
-```
-
-### 4. Run the Flask App
-```bash
-python app.py
-```
-
-Then open your browser and go to:  
-`http://127.0.0.1:5000`
+- The final image is saved and displayed in the browser.
 
 ---
 
 ## 👩‍💻 Contributors
 
-- **YA-shiKa**  
+- **Yashika Maligi**  
   GitHub: [YA-shiKa](https://github.com/YA-shiKa)  
 
 
